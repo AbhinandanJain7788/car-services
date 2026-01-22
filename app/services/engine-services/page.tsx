@@ -1,0 +1,164 @@
+
+
+
+import Image from "next/image";
+import ServicesHero from "../ServicesHero";
+import ServicesSidebar from "@/app/components/ServicesSidebar";
+import { brakeServices } from "@/data/brakeServices";
+import BrakeServicesTable from "@/app/components/BrakeServicesTable";
+import EngineServicesTable from "@/app/components/EngineServicesTable";
+
+import { siteConfig } from "@/data/site";
+export default function BrakeSystemPage() {
+  return (
+    <>
+      {/* HERO */}
+      <ServicesHero title="Engine Services" breadcrumb="Engine Services" />
+
+      {/* PAGE CONTENT */}
+      <section className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-4 gap-14">
+        
+        {/* LEFT SIDEBAR */}
+        <ServicesSidebar activeId="engine-services" />
+
+        {/* RIGHT CONTENT */}
+        <div className="lg:col-span-3">
+
+          {/* INTRO SECTION (PARALLEL LAYOUT) */}
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-24 items-start">
+
+ <div className="relative w-full h-[420px] rounded-md overflow-hidden">
+              <Image
+                src="/services/engine.jpg"
+                alt="Brake Repair Service"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            {/* TEXT */}
+            <div>
+              <h1 className="text-4xl font-semibold mb-6">
+                Engine Services
+              </h1>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+              A well-maintained engine ensures better performance, fuel efficiency, and a longer lifespan for your vehicle. Our expert mechanics use cutting-edge technology to diagnose and fix engine issues, providing you with a hassle-free driving experience.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed mb-4">
+               We specialize in:
+Fixing overheating and power loss issues
+Enhancing engine efficiency for better fuel economy
+Replacing worn-out components for long-term performance
+Ensuring smooth acceleration and reduced engine noise
+Trust our skilled professionals to restore your engine’s power and reliability.
+              </p>
+
+              {/* <p className="text-gray-700 leading-relaxed">
+                Our comprehensive brake service includes inspection, cleaning,
+                replacement, and system calibration. With certified technicians,
+                advanced diagnostic tools, and transparent pricing, we deliver
+                brake solutions you can trust.
+              </p> */}
+            </div>
+
+            {/* IMAGE */}
+           
+
+          </section>
+
+          {/* PROCESS SECTION */}
+          <section className="mb-24">
+            <h2 className="text-3xl font-semibold mb-12">
+              Expert Engine Repair Services in Dubai
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                ["1", "Engine Inspection", "We perform a thorough engine diagnosis using advanced tools to detect faults, performance issues, and potential failures, ensuring your vehicle runs smoothly and efficiently."],
+                ["2", "Engine Overhaul", "A complete engine restoration service that replaces worn-out components, cleans internal parts, and optimizes performance, giving your vehicle a fresh start and improved longevity"],
+                ["3", "Oil Leak Repair", "We identify and fix engine oil leaks, preventing further damage, improving lubrication, and ensuring optimal engine performance for a smoother and safer driving experience."],
+                ["4", "Timing Belt Replacement", "Replacing a worn or damaged timing belt prevents engine failure, enhances synchronization, and ensures smooth operation, avoiding costly breakdowns and extending your engine’s lifespan."],
+                
+              ].map(([step, title, text]) => (
+                <div
+                  key={step}
+                  className="border border-red-200 rounded-lg p-6 text-center hover:shadow-md transition"
+                >
+                  <div className="w-10 h-10 mx-auto mb-4 rounded-full border border-red-500 text-red-600 flex items-center justify-center font-semibold">
+                    {step}
+                  </div>
+                  <h4 className="font-semibold mb-2">{title}</h4>
+                  <p className="text-sm text-gray-600">{text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+         
+        
+        </div>
+      </section>\
+     <EngineServicesTable/>
+
+<section className="bg-gray-50 py-24">
+  <div className="max-w-6xl mx-auto px-6">
+
+    {/* CTA CARD */}
+    <div
+      className="relative bg-white rounded-2xl shadow-lg p-12 text-center
+                 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+    >
+
+      {/* DISCOUNT BADGE */}
+      <div className="absolute -top-5 left-1/2 -translate-x-1/2
+                      bg-red-600 text-white px-6 py-2 text-xs font-semibold
+                      tracking-widest uppercase rounded-full shadow-md">
+        {siteConfig.discountText}
+      </div>
+
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 mt-4">
+        Book Your Engine Repair Service Today
+      </h2>
+
+      <p className="text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Drive safely with expert Engine repair services performed by certified
+        technicians. We use advanced diagnostics and genuine parts to ensure
+        maximum safety, reliability, and performance.
+      </p>
+
+      <div className="flex flex-col sm:flex-row justify-center gap-6">
+
+        {/* BOOK APPOINTMENT */}
+        <a
+          href="/contact"
+          className="bg-red-600 text-white px-12 py-4 text-sm font-semibold
+                     tracking-widest uppercase rounded-md
+                     transition-all duration-300
+                     hover:bg-black hover:scale-105"
+        >
+          Book Appointment
+        </a>
+
+        {/* CALL BUTTON (DYNAMIC NUMBER) */}
+        <a
+          href={`tel:${siteConfig.phone}`}
+          className="border border-gray-300 px-12 py-4 text-sm font-semibold
+                     tracking-widest uppercase rounded-md
+                     transition-all duration-300
+                     hover:border-black hover:bg-black hover:text-white hover:scale-105"
+        >
+          Call {siteConfig.phone}
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    </>
+  );
+}

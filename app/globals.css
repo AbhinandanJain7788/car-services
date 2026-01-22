@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* @keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+
+  
+
+@keyframes servicesFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes testimonialScrollSlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out;
+        }
+
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out;
+        }
+
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+
+        .delay-700 {
+          animation-delay: 0.7s;
+        }
+
+
+
+/* HERO ANIMATION */
+@keyframes heroSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-heroSlide {
+  animation: heroSlide 0.8s ease-out both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Premium floating animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Text fade + slide */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+
+/* Soft spotlight glow */
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 100, 0.25),
+    transparent 70%
+  );
+  filter: blur(60px);
+  z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+       
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.animate-fade-up.delay-150 {
+  animation-delay: 0.15s;
+}
+
+.animate-fade-up.delay-300 {
+  animation-delay: 0.3s;
+}
+
+
+.animate-testimonial-scroll-slow {
+  animation: testimonialScrollSlow 50s linear infinite;
+}
+
+
+.animate-services {
+  animation: servicesFadeUp 1s ease-out forwards;
+}
+
+/* .animate-hero {
+  animation: heroFadeUp 1s ease-out forwards;
+} */
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
