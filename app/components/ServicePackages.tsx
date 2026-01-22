@@ -126,7 +126,7 @@ export default function ServicePackages() {
                     {pkg.price}
                   </span>
                   <span className="text-sm opacity-80 ml-1">
-                    {pkg.duration}
+                    {/* {pkg.duration} */}
                   </span>
                 </div>
 
